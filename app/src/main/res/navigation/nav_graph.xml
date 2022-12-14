@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/assignmentListFragment"
         android:name="com.example.assignment.ui.AssignmentListFragment"
-        android:label="Assignment" >
+        android:label="Assignments" >
         <action
             android:id="@+id/action_assignmentListFragment_to_addAssignmentFragment"
             app:destination="@id/addAssignmentFragment" />
@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/addAssignmentFragment"
         android:name="com.example.assignment.ui.AddAssignmentFragment"
-        android:label="Assignment"
+        android:label="Add Assignment"
         tools:layout="@layout/fragment_add_assignment" >
         <action
             android:id="@+id/action_addAssignmentFragment_to_assignmentListFragment"
@@ -29,6 +29,9 @@
             android:name="id"
             app:argType="long"
             android:defaultValue="0L" />
+        <action
+            android:id="@+id/action_addAssignmentFragment_to_assignmentDetailFragment"
+            app:destination="@id/assignmentDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/assignmentDetailFragment"
@@ -42,6 +45,9 @@
         <action
             android:id="@+id/action_assignmentDetailFragment_to_addAssignmentFragment"
             app:destination="@id/addAssignmentFragment" />
+        <action
+            android:id="@+id/action_assignmentDetailFragment_to_assignmentListFragment"
+            app:destination="@id/assignmentListFragment" />
     </fragment>
 
 </navigation>
