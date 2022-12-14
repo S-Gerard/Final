@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/assignmentListFragment">
+
+    <fragment
+        android:id="@+id/assignmentListFragment"
+        android:name="com.example.assignment.ui.AssignmentListFragment"
+        android:label="Assignment" >
+        <action
+            android:id="@+id/action_assignmentListFragment_to_addAssignmentFragment"
+            app:destination="@id/addAssignmentFragment" />
+        <action
+            android:id="@+id/action_assignmentListFragment_to_assignmentDetailFragment"
+            app:destination="@id/assignmentDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAssignmentFragment"
+        android:name="com.example.assignment.ui.AddAssignmentFragment"
+        android:label="Assignment"
+        tools:layout="@layout/fragment_add_assignment" >
+        <action
+            android:id="@+id/action_addAssignmentFragment_to_assignmentListFragment"
+            app:destination="@id/assignmentListFragment" />
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
+    <fragment
+        android:id="@+id/assignmentDetailFragment"
+        android:name="com.example.assignment.ui.AssignmentDetailFragment"
+        android:label="Assignment"
+        tools:layout="@layout/fragment_assignment_detail" >
+        <argument
+            android:name="id"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_assignmentDetailFragment_to_addAssignmentFragment"
+            app:destination="@id/addAssignmentFragment" />
+    </fragment>
+
+</navigation>

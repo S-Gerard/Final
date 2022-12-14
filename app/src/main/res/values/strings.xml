@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Assignment</string>
+    <string name="action_settings">Settings</string>
+    <string name="list_fragment_label">List Fragment</string>
+    <string name="add_fragment_label">Add Fragment</string>
+
+    <string name="assignment_name">Name</string>
+    <string name="assignment_location">Location</string>
+    <string name="in_season">Currently in season</string>
+    <string name="out_of_season">Currently out of season</string>
+    <string name="notes">Notes</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+</resources>
