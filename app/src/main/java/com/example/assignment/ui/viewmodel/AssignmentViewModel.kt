@@ -18,14 +18,14 @@ class AssignmentViewModel(
 
     fun addAssignment(
         name: String,
-        address: String,
-        inSeason: Boolean,
+        type: String,
+        days: String,
         notes: String
     ) {
         val assignment = Assignment(
             name = name,
-            address = address,
-            inSeason = inSeason,
+            type = type,
+            days = days,
             notes = notes
         )
 
@@ -37,15 +37,15 @@ class AssignmentViewModel(
     fun updateAssignment(
         id: Long,
         name: String,
-        address: String,
-        inSeason: Boolean,
+        type: String,
+        days: String,
         notes: String
     ) {
         val assignment = Assignment(
             id = id,
             name = name,
-            address = address,
-            inSeason = inSeason,
+            type = type,
+            days = days,
             notes = notes
         )
         viewModelScope.launch(Dispatchers.IO) {
@@ -59,8 +59,8 @@ class AssignmentViewModel(
         }
     }
 
-    fun isValidEntry(name: String, address: String): Boolean {
-        return name.isNotBlank() && address.isNotBlank()
+    fun isValidEntry(name: String, days: String): Boolean {
+        return name.isNotBlank() && days.isNotBlank()
     }
 }
 

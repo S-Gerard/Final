@@ -75,8 +75,8 @@ class AddAssignmentFragment : Fragment() {
         if (isValidEntry()) {
             viewModel.addAssignment(
                 binding.nameInput.text.toString(),
-                binding.locationAddressInput.text.toString(),
-                binding.inSeasonCheckbox.isChecked,
+                binding.assignmentTypeInput.text.toString(),
+                binding.daysDueInput.text.toString(),
                 binding.notesInput.text.toString()
             )
             findNavController().navigate(
@@ -90,8 +90,8 @@ class AddAssignmentFragment : Fragment() {
             viewModel.updateAssignment(
                 id = navigationArgs.id,
                 name = binding.nameInput.text.toString(),
-                address = binding.locationAddressInput.text.toString(),
-                inSeason = binding.inSeasonCheckbox.isChecked,
+                type = binding.assignmentTypeInput.text.toString(),
+                days = binding.daysDueInput.text.toString(),
                 notes = binding.notesInput.text.toString()
             )
             findNavController().navigate(
@@ -103,8 +103,8 @@ class AddAssignmentFragment : Fragment() {
     private fun bindAssignment(assignment: Assignment) {
         binding.apply{
             nameInput.setText(assignment.name, TextView.BufferType.SPANNABLE)
-            locationAddressInput.setText(assignment.address, TextView.BufferType.SPANNABLE)
-            inSeasonCheckbox.isChecked = assignment.inSeason
+            assignmentTypeInput.setText(assignment.type, TextView.BufferType.SPANNABLE)
+            daysDueInput.setText(assignment.days, TextView.BufferType.SPANNABLE)
             notesInput.setText(assignment.notes, TextView.BufferType.SPANNABLE)
             saveBtn.setOnClickListener {
                 updateAssignment()
@@ -115,7 +115,7 @@ class AddAssignmentFragment : Fragment() {
 
     private fun isValidEntry() = viewModel.isValidEntry(
         binding.nameInput.text.toString(),
-        binding.locationAddressInput.text.toString()
+        binding.daysDueInput.text.toString()
     )
 
     override fun onDestroyView() {

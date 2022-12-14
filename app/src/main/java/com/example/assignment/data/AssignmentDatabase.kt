@@ -8,7 +8,6 @@ import com.example.assignment.model.Assignment
 
 @Database(entities = [Assignment::class], version = 1, exportSchema = false)
 abstract class AssignmentDatabase : RoomDatabase() {
-//    create function
     abstract fun assignmentDao(): AssignmentDao
 
     companion object {
@@ -17,13 +16,13 @@ abstract class AssignmentDatabase : RoomDatabase() {
 
         fun getDatabase(context: Context): AssignmentDatabase {
             return INSTANCE ?: synchronized(this) {
-                val instane = Room.databaseBuilder(
+                val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AssignmentDatabase::class.java,
                     "assignment_database"
                 ).build()
-                INSTANCE = instane
-                return instane
+                INSTANCE = instance
+                return instance
             }
         }
     }

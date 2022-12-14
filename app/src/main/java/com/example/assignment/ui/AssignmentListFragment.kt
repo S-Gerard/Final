@@ -1,5 +1,6 @@
 package com.example.assignment.ui
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.assignment.BaseApplication
 import com.example.assignment.R
 import com.example.assignment.databinding.FragmentAssignmentListBinding
+import com.example.assignment.model.Assignment
 import com.example.assignment.ui.adapter.AssignmentListAdapter
 import com.example.assignment.ui.viewmodel.AssignmentViewModel
 import com.example.assignment.ui.viewmodel.AssignmentViewModelFactory
@@ -56,4 +58,13 @@ class AssignmentListFragment : Fragment() {
             }
         }
     }
+
+    val longClick = {assignment: Assignment ->
+        deleteAssignment(assignment)
+    }
+
+    private fun deleteAssignment(assignment: Assignment) {
+        viewModel.deleteAssignment(assignment)
+    }
+
 }

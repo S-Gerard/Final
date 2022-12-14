@@ -30,27 +30,35 @@
         android:id="@+id/location_address_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/assignment_location"
+        android:hint="@string/assignment_type"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_label">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/location_address_input"
+            android:id="@+id/assignment_type_input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textAutoComplete" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.checkbox.MaterialCheckBox
-        android:id="@+id/in_season_checkbox"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/days_due_label"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/assignment_days_left"
         android:layout_marginTop="16dp"
-        android:text="@string/in_season"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/location_address_label"/>
+        app:layout_constraintTop_toBottomOf="@id/location_address_label">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/days_due_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textAutoComplete" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/notes_label"
@@ -59,7 +67,7 @@
         android:hint="@string/notes"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/in_season_checkbox">
+        app:layout_constraintTop_toBottomOf="@id/days_due_label">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/notes_input"

@@ -1,7 +1,5 @@
 package com.example.assignment.ui
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +9,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.assignment.BaseApplication
-import com.example.assignment.R
 import com.example.assignment.databinding.FragmentAssignmentDetailBinding
 import com.example.assignment.model.Assignment
 import com.example.assignment.ui.viewmodel.AssignmentViewModel
@@ -52,34 +49,15 @@ class AssignmentDetailFragment : Fragment() {
     private fun bindAssignment() {
         binding.apply {
             name.text = assignment.name
-            location.text = assignment.address
+            type.text = assignment.type
             notes.text = assignment.notes
-            if (assignment.inSeason) {
-                season.text = getString(R.string.in_season)
-            } else {
-                season.text = getString(R.string.out_of_season)
-            }
+            days.text = assignment.days
             editAssignmentFab.setOnClickListener {
                 val action = AssignmentDetailFragmentDirections
                     .actionAssignmentDetailFragmentToAddAssignmentFragment(assignment.id)
                 findNavController().navigate(action)
             }
 
-            location.setOnClickListener {
-                launchMap()
-            }
         }
-    }
-
-    private fun launchMap() {
-        val address = assignment.address.let {
-            it.replace(", ", ",")
-            it.replace(". ", " ")
-            it.replace(" ", "+")
-        }
-        val gmmIntentUri = Uri.parse("geo:0,0?q=$address")
-        val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-        mapIntent.setPackage("com.google.android.apps.maps")
-        startActivity(mapIntent)
     }
 }

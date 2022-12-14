@@ -5,9 +5,8 @@
     <string name="add_fragment_label">Add Fragment</string>
 
     <string name="assignment_name">Name</string>
-    <string name="assignment_location">Location</string>
-    <string name="in_season">Currently in season</string>
-    <string name="out_of_season">Currently out of season</string>
+    <string name="assignment_type">Class</string>
+    <string name="assignment_days_left">Days until due</string>
     <string name="notes">Notes</string>
     <string name="save">Save</string>
     <string name="delete">Delete</string>
