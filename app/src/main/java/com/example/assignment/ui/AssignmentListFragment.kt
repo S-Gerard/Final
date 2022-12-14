@@ -59,12 +59,4 @@ class AssignmentListFragment : Fragment() {
         }
     }
 
-    val longClick = {assignment: Assignment ->
-        deleteAssignment(assignment)
-    }
-
-    private fun deleteAssignment(assignment: Assignment) {
-        viewModel.deleteAssignment(assignment)
-    }
-
 }

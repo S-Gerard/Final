@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface AssignmentDao {
 
-    @Query("SELECT * from assignment_database ORDER BY name ASC")
+    @Query("SELECT * from assignment_database ORDER BY days * 1 ASC")
     fun getAssignments(): Flow<List<Assignment>>
     @Query("SELECT * FROM assignment_database WHERE id = :id")
     fun getAssignment(id:Long):Flow<Assignment>

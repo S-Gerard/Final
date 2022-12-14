@@ -42,6 +42,29 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:text="Class"/>
 
+        <TextView
+            android:id="@+id/assignment_days_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/assignment_days_left"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="5dp"
+            app:layout_constraintEnd_toStartOf="@id/assignment_days_number"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Days until due"/>
+
+        <TextView
+            android:id="@+id/assignment_days_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{assignment.days}"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="1"/>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"

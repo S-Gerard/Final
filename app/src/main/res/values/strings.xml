@@ -6,7 +6,7 @@
 
     <string name="assignment_name">Name</string>
     <string name="assignment_type">Class</string>
-    <string name="assignment_days_left">Days until due</string>
+    <string name="assignment_days_left">Days until due </string>
     <string name="notes">Notes</string>
     <string name="save">Save</string>
     <string name="delete">Delete</string>
